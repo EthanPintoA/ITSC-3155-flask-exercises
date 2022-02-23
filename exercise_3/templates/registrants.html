@@ -1,0 +1,24 @@
+{% extends '_layout.html' %}
+{% set active_page = "registrants" %}
+
+{% block body %}
+<h1>Registered Students</h1>
+<p>The following students have registered for student organizations.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Organization</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for name, organization in registrant_DB.items() %}
+    <tr>
+      <td>{{ name }}</td>
+      <td>{{ organization }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
